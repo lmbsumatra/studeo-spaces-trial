@@ -5,20 +5,48 @@ import "../../src/index.css";
 const Home = () => {
   useEffect(() => {
     document.title = "Home";
+
+    const nav = document.querySelector(".primary-navigation");
+    const navToggle = document.querySelector(".mobile-nav-toggle");
+
+    const toggleNav = () => {
+      const visibility = nav.getAttribute("data-visible") === "true";
+      nav.setAttribute("data-visible", !visibility);
+      navToggle.setAttribute("aria-expanded", !visibility);
+    };
+
+    navToggle.addEventListener("click", toggleNav);
+
+    // Cleanup function to remove the event listener when component unmounts
+    return () => {
+      navToggle.removeEventListener("click", toggleNav);
+    };
   }, []);
 
   return (
-    <div>
-      {/* <header className="primary-header flex">
+    <div className="home">
+      <header className="primary-header flex">
         <div>
           <img src={logo} alt="Studeo Spaces Logo" class="logo" />
         </div>
+
+        <button
+          className="mobile-nav-toggle"
+          menu-toggled="false"
+          aria-controls="primary-navigation"
+        >
+          <span className="sr-only" aria-expanded="true">
+            Menu
+          </span>
+        </button>
         <nav className="flex">
           <ul
+            id="primary-navigation"
             className="primary-navigation underline-indicators flex"
-            style={{ "--gap": "4rem", border: "1px solid red" }}
+            style={{ "--gap": "" }}
+            data-visible="false"
           >
-            <li className="active" style={{ border: "1px solid yellow" }}>
+            <li className="active">
               <a
                 href="#"
                 className="ff-sans-cond uppercase text-white letter-spacing-2"
@@ -54,9 +82,9 @@ const Home = () => {
             </li>
           </ul>
         </nav>
-      </header> */}
+      </header>
 
-      <div class="grid-container">
+      <div class="grid-container grid-container--home">
         <div>
           <h1 class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
             So, you want to travel to
@@ -80,7 +108,6 @@ const Home = () => {
           </a>
         </div>
       </div>
-
     </div>
   );
 };
