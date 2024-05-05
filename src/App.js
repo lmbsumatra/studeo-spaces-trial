@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import DesignSystem from "./pages/DesignSystem.js";
-import Home from "./pages/Home.js";
+import Home from "./pages/home/Home.js";
 import './index.css';
 
 function App() {

@@ -94,7 +94,7 @@ body {
   display: grid;
   grid-template-rows: min-content 1fr;
 
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* make images easier to work with */
@@ -183,7 +183,7 @@ select {
   }
 
   .grid-container--home {
-    padding-bottom: 6rem;
+    padding-top: 10rem;
     align-items: end;
   }
 }
@@ -328,14 +328,36 @@ select {
   transform: scale(1.5);
 }
 
+/* primary header and navigation */
+
+.logo {
+  margin: 0.5rem clamp(1.5rem, 5vw, 3.5rem);
+  width: 48px;
+  height: auto;
+}
+
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
+}
+
 .primary-navigation {
-  --gap: 4rem;
+  --gap: clamp(1.5rem, 10vw, 3.5rem);
   --underline-gap: 2rem;
   list-style: none;
   padding: 0;
   margin: 0;
   background: hsl(var(--clr-dark) / 0.98);
   /* backdrop-filter: blur(2rem); */
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+
+.primary-navigation a > span {
+  font-weight: 700;
+  margin: 0.5em;
 }
 
 .mobile-nav-toggle {
@@ -350,7 +372,7 @@ select {
   }
 }
 
-@media (max-width: 65rem) {
+/* @media (max-width: 65rem) {
   .primary-navigation {
     --underline-gap: 0.5rem;
     position: fixed;
@@ -397,9 +419,9 @@ select {
     outline: 5px solid white;
     outline-offset: 5px;
   }
-}
+} */
 
-@media (max-width: 35rem) {
+@media (max-width: 45rem) {
   .primary-navigation {
     --underline-gap: 0.5rem;
     position: fixed;
@@ -426,7 +448,7 @@ select {
     position: absolute;
     z-index: 2000;
     right: 1rem;
-    top: 2rem;
+    /* top: 2rem; */
     background: transparent;
     background-image: url(./assets/images/icons/menu.svg);
     background-repeat: no-repeat;
@@ -448,13 +470,41 @@ select {
   }
 }
 
-.primary-navigation a {
-  text-decoration: none;
+@media (min-width: 65em) {
+  .primary-navigation {
+    padding-inline: clamp(3rem, 10vw, 7rem);
+  }
 }
 
-.primary-navigation a > span {
-  font-weight: 700;
-  margin: 0.5em;
+@media (min-width: 40em) {
+  .primary-navigation {
+    padding-inline: clamp(3rem, 10vw, 7rem);
+  }
+
+  .primary-navigation a > span {
+    display: none;
+  }
+}
+
+@media (min-width: 65em) {
+  .primary-header::after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 1px;
+    margin-right: -2.5rem;
+    background: hsl(var(--clr-light) / 0.15);
+    width: 100%;
+    order: 1;
+  }
+
+  nav {
+    order: 2;
+  }
+  .primary-navigation {
+    margin-block: 2rem;
+    /* padding-inline: 7rem; */
+  }
 }
 
 .underline-indicators > * {
@@ -522,29 +572,5 @@ select {
 /* Page specific backgrounds */
 /* ------------------------------------------ */
 body {
-  background-size: cover;
   background-position: bottom center;
-}
-
-.home {
-  background-image: url(./assets/images/home/hero-background-image-mobile.png);
-}
-
-@media (min-width: 35rem) {
-  .home {
-    background-image: url(./assets/images/home/hero-background-image.png);
-  }
-}
-
-/* primary header */
-
-.logo {
-  margin: 0.5rem clamp(1.5rem, 5vw, 3.5rem);
-  width: 48px;
-  height: auto;
-}
-
-.primary-header {
-  justify-content: space-between;
-  align-items: center;
 }
