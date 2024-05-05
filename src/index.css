@@ -154,14 +154,20 @@ select {
   padding-inline: 2em;
   margin-inline: auto;
   max-width: 80rem;
+  text-align: center;
+}
+
+* > .grid-container:not(:last-child) {
+  margin-bottom: 100px;
 }
 
 .grid-container {
   text-align: center;
-  height: 100vh; /* Maximize height */
+  max-height: 100vh; /* Maximize height */
   display: grid;
   place-items: center;
   padding-inline: 1rem;
+  border: solid 1px pink;
 }
 
 .grid-container * {

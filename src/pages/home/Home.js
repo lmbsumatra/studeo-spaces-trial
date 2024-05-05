@@ -37,7 +37,10 @@ const Home = () => {
             Explore
           </a>
         </div>
+      </main>
 
+      <div className="container center">
+        <span class="d-block fs-700 ff-serif uppercase text-white">Services</span>
         <div className="grid-container">
           <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" src="holder.js/100px180" />
@@ -61,8 +64,30 @@ const Home = () => {
               <Button variant="primary">Go somewhere</Button>
             </Card.Body>
           </Card>
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
         </div>
-      </main>
+      </div>
     </div>
   );
 };

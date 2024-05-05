@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import logo from "../assets/images/studeo-spaces-logo.png";
 
+import Button from "react-bootstrap/Button";
+
 const Navigation = () => {
   useEffect(() => {
     const nav = document.querySelector(".primary-navigation");
@@ -74,7 +76,7 @@ const Navigation = () => {
             </li>
             <li>
               <a href="#" className="uppercase text-white letter-spacing-2">
-                <span aria-hidden="true">04</span>Book
+                <span aria-hidden="true">04</span><Button variant="primary">Book</Button>
               </a>
             </li>
           </ul>
