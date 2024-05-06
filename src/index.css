@@ -149,15 +149,52 @@ select {
   margin-top: var(--flow-space, 1rem);
 }
 
+/* Every section's container */
+/* Container styles */
 .container {
-  /* --own version */
-  padding-inline: 2em;
-  margin-inline: auto;
-  max-width: 80rem;
+  /* padding: 2em; Adjusted padding */
   text-align: center;
+  border: 1px solid yellow;
 }
 
-* > .grid-container:not(:last-child) {
+/* Tiled container */
+.tile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid yellow;
+}
+
+.tile-container > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); /* Adjusted grid-template-columns */
+  gap: 1rem; /* Added gap between grid items */
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 16rem; /* Adjusted max-width */
+  margin: 0 1rem 1rem 0;
+  text-align: left;
+}
+
+/* Media queries for smaller screens */
+@media (min-width: 486px) {
+  .tile-container > div {
+    grid-template-columns: repeat(2, minmax(10rem, 15rem)); /* Adjusted for smaller screens */
+  }
+}
+
+/* Media queries for very small screens */
+@media (min-width: 768px) {
+  .tile-container > div {
+    grid-template-columns: repeat(3, minmax(5rem, 15rem)); /* Adjusted for very small screens */
+  }
+}
+
+/* Grid container */
+* > main:not(:last-child), .container {
   margin-bottom: 100px;
 }
 

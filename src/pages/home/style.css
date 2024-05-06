@@ -6,6 +6,6 @@
   .home {
     background-image: url(../../assets/images/home/hero-background-image.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:100vw;
   }
 }
