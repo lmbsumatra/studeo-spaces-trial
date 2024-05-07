@@ -47,7 +47,7 @@ const Navigation = () => {
           >
             <li className="active">
               <a
-                href="#"
+                href="/"
                 className="ff-sans-cond uppercase text-white letter-spacing-2"
               >
                 <span aria-hidden="true">00</span>Home
@@ -55,7 +55,7 @@ const Navigation = () => {
             </li>
             <li>
               <a
-                href="#"
+                href="/blogs"
                 className="ff-sans-cond uppercase text-white letter-spacing-2"
               >
                 <span aria-hidden="true">01</span>Blogs
@@ -63,19 +63,19 @@ const Navigation = () => {
             </li>
             <li>
               <a
-                href="#"
+                href="/services"
                 className="ff-sans-cond uppercase text-white letter-spacing-2"
               >
                 <span aria-hidden="true">02</span>Services
               </a>
             </li>
             <li>
-              <a href="#" className="uppercase text-white letter-spacing-2">
+              <a href="/faqs" className="uppercase text-white letter-spacing-2">
                 <span aria-hidden="true">03</span>FAQs
               </a>
             </li>
             <li>
-              <a href="#" className="uppercase text-white letter-spacing-2">
+              <a href="/book" className="uppercase text-white letter-spacing-2">
                 <span aria-hidden="true">04</span><Button variant="primary">Book</Button>
               </a>
             </li>

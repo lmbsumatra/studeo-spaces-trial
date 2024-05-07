@@ -165,7 +165,7 @@ select {
   border: 1px solid yellow;
 }
 
-.tile-container > div {
+.tile-container > div, .carousel {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); /* Adjusted grid-template-columns */
   gap: 1rem; /* Added gap between grid items */
@@ -181,14 +181,14 @@ select {
 
 /* Media queries for smaller screens */
 @media (min-width: 486px) {
-  .tile-container > div {
+  .tile-container > div, .carousel {
     grid-template-columns: repeat(2, minmax(10rem, 15rem)); /* Adjusted for smaller screens */
   }
 }
 
 /* Media queries for very small screens */
 @media (min-width: 768px) {
-  .tile-container > div {
+  .tile-container > div, .carousel {
     grid-template-columns: repeat(3, minmax(5rem, 15rem)); /* Adjusted for very small screens */
   }
 }
@@ -204,7 +204,7 @@ select {
   display: grid;
   place-items: center;
   padding-inline: 1rem;
-  border: solid 1px pink;
+  /* border: solid 1px pink; */
 }
 
 .grid-container * {
@@ -229,6 +229,27 @@ select {
     padding-top: 10rem;
     align-items: end;
   }
+}
+
+.grid-container--blog{
+  border: solid 1px white;
+}
+
+.grid-container--blog:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.grid-container--blog > div {
+  
+  width: 100%;
+  place-items:center;
+}
+
+.grid-container--blog > div > img {
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+  border-radius: 10px;
 }
 
 .sr-only {
@@ -414,55 +435,6 @@ select {
     backdrop-filter: blur(2rem);
   }
 }
-
-/* @media (max-width: 65rem) {
-  .primary-navigation {
-    --underline-gap: 0.5rem;
-    position: fixed;
-    z-index: 1000;
-    inset: 0 0 0 40%;
-    list-style: none;
-    padding: min(6rem, 20vh) 2rem;
-    margin: 0;
-    flex-direction: column;
-    transform: translateX(100%);
-    transition: transform 500ms ease-in-out;
-  }
-
-  .primary-navigation[data-visible="true"] {
-    transform: translateX(0);
-  }
-
-  .primary-navigation.underline-indicators > .active {
-    border: 0;
-  }
-
-  .mobile-nav-toggle {
-    display: block;
-    position: absolute;
-    z-index: 2000;
-    right: 1rem;
-    top: 2rem;
-    background: transparent;
-    background-image: url(./assets/images/icons/menu.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 1.5rem;
-    aspect-ratio: 1;
-    border: 0;
-    pointer-events: all;
-  }
-
-  .mobile-nav-toggle[aria-expanded="true"] {
-    background-image: url(./assets/images/icons/xmark.svg);
-  }
-
-  .mobile-nav-toggle:focus-visible {
-    outline: 5px solid white;
-    outline-offset: 5px;
-  }
-} */
 
 @media (max-width: 45rem) {
   .primary-navigation {
